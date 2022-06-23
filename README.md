@@ -18,25 +18,27 @@ Just like the Bubble Sort Insertion Sort sorts the array in place, which reduces
 
 ## Merge Sort
 
+Merge sort is based on recursively splitting up the input array into its elements which then can be gradually merged back together into bigger and bigger chunks until the last two chunks get merged into the sorted array.
 
+For this algorithm a recursive implementation is useful, because it allows to build a tree that successively splits the array down to its elements. The recursion is interrupted, when the input to the next call of the recursive function is a single element. From there on the tree is traversed in the opposite direction while merging the tips of the branches back together in correct order.
+This implementation too is only modifying the array in place. The correct accessing of different parts of the array is controlled by an l(eft) and r(ight) index for each recursion to stick to.
 
 ## Quick Sort
 
+Quick Sort too is an algorithm that suggests a recursive implementation as in every step the elements of the array are sorted to the left or to the right of a (in this implementation arbitrarily) chosen pivot element based on if they are less or greater than it. Each newly created half now is sorted the same way, and so on.
+
+A weakness of this implementation is the random choice of the pivot element instead of choosing the median value of the array, because this causes, that deeper recursions have to be executed.
 ## Comparison
 
-Time of execution in seconds
+![Merge and Quick](m_q.svg)
+![All](all.svg)
 
-| n array elements | 1000 | 10.000 | 100.000 | 1.000.000 |
-|--------------|:-----:|-----------:|
-| Bubble Sort |  1.99 |        739 |
-| Insertion Sort |  1.89 |          6 |
-| Merge Sort |  1.89 |          6 |
-| Quick Sort |  1.89 |          6 |
+You can clearly see, that Merge and Quick outperform the other two with Quick Sort being even slightly faster than Merge. Also their execution time seems to be linearly dependent on the array size as opposed to bubble and insert with quadratic looking curves. This ensures that even huge arrays will be sorted in relatively litte time.
 
 ## Good to know
 
-Used Python version: 3.8
+Python version: 3.8
 
 Machine: Windows, AMD Ryzen 5 4000 Series, 8 GB RAM
 
-All used implementations originate from https://www.geeksforgeeks.org/ (small adjustments were made). You can find a direct link to each implementation in the file itself.
+All used implementations originate from https://www.geeksforgeeks.org/ (some adjustments were made). You can find a direct link to each implementation in the corresponding files.

@@ -35,4 +35,5 @@ def quicksort(l, r, nums):
 	return nums
 
 def sort(arr):
-	return quicksort(0, len(arr)-1, arr)
+	arr = quicksort(0, len(arr)-1, arr)
+	return arr
