@@ -21,7 +21,7 @@ Just like the Bubble Sort Insertion Sort sorts the array in place, which reduces
 Merge sort is based on recursively splitting up the input array into its elements which then can be gradually merged back together into bigger and bigger chunks until the last two chunks get merged into the sorted array.
 
 For this algorithm a recursive implementation is useful, because it allows to build a tree that successively splits the array down to its elements. The recursion is interrupted, when the input to the next call of the recursive function is a single element. From there on the tree is traversed in the opposite direction while merging the tips of the branches back together in correct order.
-This implementation too is only modifying the array in place. The correct accessing of different parts of the array is controlled by an l(eft) and r(ight) index for each recursion to stick to.
+This implementation too is only modifying the array in place. The correct accessing of different parts of the array is controlled by an l(eft) and r(ight) index to restrict each recursion.
 
 ## Quick Sort
 
@@ -30,10 +30,10 @@ Quick Sort too is an algorithm that suggests a recursive implementation as in ev
 A weakness of this implementation is the random choice of the pivot element instead of choosing the median value of the array, because this causes, that deeper recursions have to be executed.
 ## Comparison
 
-![Merge and Quick](m_q.svg)
 ![All](all.svg)
+![Merge and Quick](m_q.svg)
 
-You can clearly see, that Merge and Quick outperform the other two with Quick Sort being even slightly faster than Merge. Also their execution time seems to be linearly dependent on the array size as opposed to bubble and insert with quadratic looking curves. This ensures that even huge arrays will be sorted in relatively litte time.
+You can clearly see, that Merge and Quick outperform the other two with Quick Sort being even slightly faster than Merge. Also their execution time seems to be linearly dependent on the array size as opposed to Bubble and Insert with quadratic looking curves. This ensures that even huge arrays will be sorted in relatively litte time.
 
 ## Good to know
 
@@ -41,4 +41,4 @@ Python version: 3.8
 
 Machine: Windows, AMD Ryzen 5 4000 Series, 8 GB RAM
 
-All used implementations originate from https://www.geeksforgeeks.org/ (some adjustments were made). You can find a direct link to each implementation in the corresponding files.
+All used implementations originate from https://www.geeksforgeeks.org/ (some adjustments were made). You can find a direct link to each implementation in the corresponding file.
